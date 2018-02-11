@@ -19,11 +19,7 @@ const messages = [
         text: 'nope, still nothing is working'
     }
 ];
-const users = [{
-        user: 'doop',
-        email: 'noop',
-        pass: 'loop'
-    }];
+
 app.use(bodyparser.json());
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -35,6 +31,11 @@ app.use((req, res, next) => {
 });
 const api = express.Router();
 const auth = express.Router();
+
+app.get('/', (req, res) => {
+    res.send('A-OKAY');
+});
+
 api.get('/', (req, res) => {
     res.send('OKAY');
 });
